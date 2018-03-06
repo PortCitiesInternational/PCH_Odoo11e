@@ -148,14 +148,14 @@
 		            
 		            <div class="bottom">
 		            	<div class="row">
-		            		<div class="col-xs-3">
+		            		<div class="col-xs-2">
 		            			<p>Payment Terms :</p>
 		            			<p>Notes :</p>
 		            		</div>
-		            		<div class="col-xs-9">
+		            		<div class="col-xs-10">
 		            			<p>
 		            			<t t-if="o.payment_term_id">
-		            				<span t-field="o.payment_term_id"/>	
+		            				<span t-field="o.payment_term_id.note"/>	
 		            			</t>
 		            			<t t-if="not o.payment_term_id">
 		            				<![CDATA[&nbsp;]]>
