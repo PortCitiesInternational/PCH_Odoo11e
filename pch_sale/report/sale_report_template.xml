@@ -28,7 +28,7 @@
 		                    <p t-if="o.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="o.partner_id.vat"/></p>
 		                </div>
 					</div>
-					
+					<br />
 					<h2>
 						<t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
 							<span t-if="o.state not in ['draft','sent']">Order N° </span>
@@ -39,11 +39,11 @@
 					
 					<div class="row mt32 mb32" id="information">
 						<div class="col-xs-3 text-center">
-							<strong>Your Reference</strong>
+							<strong>Reference</strong>
 							<p t-field="o.client_order_ref"/>
 						</div>
 						<div class="col-xs-3 text-center">
-							<strong>Date Ordered</strong>
+							<strong>Order Date</strong>
 							<p t-field-options='{"widget": "date"}' t-field="o.date_order" />
 						</div>
 						<div class="col-xs-3 text-center">
@@ -67,7 +67,6 @@
 		           					<th class="text-right">Quantity</th>
 		           					<th class="text-right">Unit Price</th>
 		           					<th t-if="display_discount" class="text-right" groups="sale.group_discount_per_so_line">Disc.(%)</th>
-		           					<th class="text-right">Taxes</th>
 		           					<th class="text-right" groups="sale.group_show_price_subtotal">Amount</th>
 		           				</tr>
 		           			</thead>
@@ -94,9 +93,6 @@
 		                                    </td>
 		                                    <td t-if="display_discount" class="text-right" groups="sale.group_discount_per_so_line">
 		                                        <span t-field="l.discount"/>
-		                                    </td>
-		                                    <td class="text-right">
-		                                        <span t-esc="', '.join(map(lambda x: (x.description or x.name), l.tax_id))"/>
 		                                    </td>
 		                                    <td class="text-right" groups="sale.group_show_price_subtotal">
 		                                        <span t-field="l.price_subtotal"
@@ -147,9 +143,13 @@
 		            </div>
 		            
 		            <div class="bottom">
-		            	<div class="row">
+		            	<div class="row" style="line-height: 10pt">
 		            		<div class="col-xs-2">
 		            			<p>Payment Terms :</p>
+		            			<p>Account Number :</p>
+		            			<p>Account Name :</p>
+		            			<p>Benificiary Bank :</p>
+		            			<p>SWIFT Code :</p>
 		            			<p>Notes :</p>
 		            		</div>
 		            		<div class="col-xs-10">
@@ -158,6 +158,38 @@
 		            				<span t-field="o.payment_term_id.note"/>	
 		            			</t>
 		            			<t t-if="not o.payment_term_id">
+		            				<![CDATA[&nbsp;]]>
+		            			</t>
+		            			</p>
+		            			<p> 
+		            			<t t-if="o.bank_account">
+		            				<span t-field="o.bank_account.bank_acc_number"/>	
+		            			</t>
+		            			<t t-if="not o.bank_account">
+		            				<![CDATA[&nbsp;]]>
+		            			</t>
+		            			</p>
+		            			<p> 
+		            			<t t-if="o.bank_account">
+		            				<span t-field="o.bank_account.name"/>	
+		            			</t>
+		            			<t t-if="not o.bank_account">
+		            				<![CDATA[&nbsp;]]>
+		            			</t>
+		            			</p>
+		            			<p> 
+		            			<t t-if="o.bank_account">
+		            				<span t-field="o.bank_account.bank_id.name"/>	
+		            			</t>
+		            			<t t-if="not o.bank_account">
+		            				<![CDATA[&nbsp;]]>
+		            			</t>
+		            			</p>
+		            			<p> 
+		            			<t t-if="o.bank_account">
+		            				<span t-field="o.bank_account.bank_id.bic"/>	
+		            			</t>
+		            			<t t-if="not o.bank_account">
 		            				<![CDATA[&nbsp;]]>
 		            			</t>
 		            			</p>
@@ -179,7 +211,7 @@
 	
 	<template id="external_layout_background">
 		<t t-foreach="docs" t-as="o">
-        <div class="header o_background_header">
+        <div class="header o_background_header_pch">
             <div class="pull-right">
                 <h3 class="mt0 text-right" t-field="o.company_id.report_header"/>
             </div>
@@ -202,6 +234,14 @@
                     <li t-if="o.company_id.vat"><i class="fa fa-building-o"/><t t-esc="o.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="company.vat"/></li>
                 </ul>
                 <div t-field="o.company_id.report_footer"/>
+                <div class="text-center">
+                	<span t-field="o.company_id.name"/>
+                	-
+                	<span t-field="o.company_id.street"/>
+                	<span t-field="o.company_id.street2"/>
+                	<span t-field="o.company_id.city"/>,
+                	<span t-field="o.company_id.country_id.name"/>
+                </div>
                 <div class="text-muted">
                     Page:
                     <span class="page"/>
@@ -212,4 +252,5 @@
         </div>
         </t>
     </template>
+
 </odoo>

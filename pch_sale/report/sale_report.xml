@@ -6,6 +6,7 @@
 			string="Quotation / Sale Order"
 			model="sale.order"
 			report_type="qweb-pdf"
+			paperformat="pch_sale.pch_sale_paperformat"
 			file="pch_sale.custom_sale_report"
 			name="pch_sale.custom_sale_report"
 			menu="True"

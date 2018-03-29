@@ -9,14 +9,25 @@
     'description' : """
     v 1.0
     Customize Report Sale Order \n
-    by AK.
+    by AK.\n
+    v 2.0\n
+    - Customize Report Customer Invoice\n
+    - Adjust report format\n
+    - Remove Tax from sales and invoice report\n
+    - Add Bank Account information to sales and invoice report\n
     """,
     'depends': [
-        'sale'
+        'sale','web'
     ],
     'data':[
+        'report/invoice_report.xml',
+        'report/invoice_report_template.xml',
         'report/sale_report.xml',
         'report/sale_report_template.xml',
+        'report/pch_sale_paperformat.xml',
+        'views/account_invoice_view.xml',
+        'views/sale_view.xml',
+        'views/web.xml',
     ],
     'active': False,
     'installable': True,
