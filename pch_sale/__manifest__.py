@@ -20,11 +20,11 @@
         'sale','web'
     ],
     'data':[
+        'report/pch_sale_paperformat.xml',
         'report/invoice_report.xml',
         'report/invoice_report_template.xml',
         'report/sale_report.xml',
         'report/sale_report_template.xml',
-        'report/pch_sale_paperformat.xml',
         'views/account_invoice_view.xml',
         'views/sale_view.xml',
         'views/web.xml',

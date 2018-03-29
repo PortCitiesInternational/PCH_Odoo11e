@@ -2,7 +2,7 @@
 <odoo>
 	<data>
 		<report 
-			id="account.account_invoices"
+			id="report_account_invoices"
 			string="Invoices"
 			model="account.invoice"
 			report_type="qweb-pdf"
