@@ -25,7 +25,7 @@
 
 		            <div class="row mt32 mb32" id="information">
 						<div class="col-xs-3 text-center">
-							<strong>Description</strong>
+							<strong>Reference/Description</strong>
 							<p t-field="o.name"/>
 						</div>
 						<div class="col-xs-3 text-center">
@@ -33,7 +33,7 @@
 							<p t-field-options='{"widget": "date"}' t-field="o.date_invoice" />
 						</div>
 						<div class="col-xs-3 text-center">
-							<strong>Contact</strong>
+							<strong>Salesperson</strong>
 							<p t-field="o.user_id"/>
 						</div>
 						<div class="col-xs-3 text-center">
@@ -74,15 +74,6 @@
 		                            <span t-field="l.price_subtotal"
 		                                t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
 		                        </td>
-		                    </tr>
-		                    <tr t-foreach="range(max(5-len(o.invoice_line_ids),0))" t-as="l">
-		                        <td t-translation="off">&amp;nbsp;</td>
-		                        <td class="hidden"></td>
-		                        <td></td>
-		                        <td></td>
-		                        <td t-if="display_discount"></td>
-		                        <td></td>
-		                        <td></td>
 		                    </tr>
 		                </tbody>
 		            </table>
