@@ -39,8 +39,7 @@
 					
 					<div class="row mt32 mb32" id="information">
 						<div class="col-xs-3 text-center">
-							<span t-if="o.state in ['draft','sent']"><strong>Customer Reference</strong></span>
-							<span t-if="o.state not in ['draft','sent']"><strong>Reference</strong></span>							
+							<strong>Reference</strong>							
 							<p t-field="o.client_order_ref"/>
 						</div>
 						<div class="col-xs-3 text-center">
@@ -146,84 +145,60 @@
 		            <div class="bottom">
 		            	<div class="row" style="line-height: 10pt">
 		            		<div class="col-xs-12">
-		            			<tr>
-		            				<td>
-		            					<p>
-			            					<div class="col-xs-2">
-			            						Payment Terms :
-			            					</div>
-			            					<div class="col-xs-10">
-			            						<span t-field="o.payment_term_id"/>
-			            					</div>
-		            					</p>
-		            				</td>
-		            			</tr>
-		            			<br/>
-		            			<tr>
-		            				<td>
-		            					<p>
-		            						<div class="col-xs-2">
-		            							Account Number :
-		            						</div>
-		            						<div class="col-xs-10">
-		            							<span t-field="o.bank_account.bank_acc_number"/>
-		            						</div>
-		            					</p>
-		            				</td>
-		            			</tr>
-		            			<br/>
-		            			<tr>
-		            				<td>
-		            					<p>
-		            						<div class="col-xs-2">
-		            							Account Name :
-		            						</div>
-		            						<div class="col-xs-10">
-		            							<span t-field="o.bank_account.name"/>
-		            						</div>
-		            					</p>
-		            				</td>
-		            			</tr>
-		            			<br/>
-		            			<tr>
-		            				<td>
-		            					<p>
-		            						<div class="col-xs-2">
-		            							Benificiary Bank :
-		            						</div>
-		            						<div class="col-xs-10">
-		            							<span t-field="o.bank_account.bank_id.name"/>
-		            						</div>
-		            					</p>
-		            				</td>
-		            			</tr>
-		            			<br/>
-		            			<tr>
-		            				<td>
-		            					<p>
-		            						<div class="col-xs-2">
-		            							SWIFT Code :
-		            						</div>	
-		            						<div class="col-xs-10">
-		            							<span t-field="o.bank_account.bank_id.bic"/>
-		            						</div>
-		            					</p>
-		            				</td>
-		            			</tr>
-		            			<br/>
-		            			<tr>
-		            				<td>
-		            					<p>
-		            						<div class="col-xs-2">
-		            							Notes :
-		            						</div>
-		            						<div class="col-xs-2">
-		            							<span t-field="o.note"/>
-		            						</div>	
-		            					</p>
-		            				</td>
-		            			</tr>
-		            		</div>
+								<p>
+									<div class="col-xs-2">
+										Payment Terms :
+									</div>
+									<div class="col-xs-10">
+										<span t-field="o.payment_term_id.note"/>
+									</div>
+								</p>
+								<br/>
+								<p>
+									<div class="col-xs-2">
+		    							Account Number :
+		    						</div>
+		    						<div class="col-xs-10">
+		    							<span t-field="o.bank_account.bank_acc_number"/>
+		    						</div>
+		    					</p>
+		    					<br/>
+		    					<p>
+            						<div class="col-xs-2">
+            							Account Name :
+            						</div>
+            						<div class="col-xs-10">
+            							<span t-field="o.bank_account.sequence_id.name"/>
+            						</div>
+            					</p>
+            					<br/>
+            					<p>
+            						<div class="col-xs-2">
+            							Benificiary Bank :
+            						</div>
+            						<div class="col-xs-10">
+            							<span t-field="o.bank_account.bank_id.name"/>
+            						</div>
+            					</p>
+            					<br/>
+            					<p>
+            						<div class="col-xs-2">
+            							SWIFT Code :
+            						</div>	
+            						<div class="col-xs-10">
+            							<span t-field="o.bank_account.bank_id.bic"/>
+            						</div>
+            					</p>
+            					<br/>
+            					<p t-if="o.note">
+            						<div class="col-xs-2">
+            							Notes :
+            						</div>
+            						<div class="col-xs-10">
+            							<span t-field="o.note"/>
+            						</div>	
+            					</p>
+							</div>
 		            	</div>
 		            </div>
 				</div>
