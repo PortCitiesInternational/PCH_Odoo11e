@@ -102,55 +102,55 @@
 		            	<div class="row" style="line-height: 10pt">
 		            		<div class="col-xs-12">
 		            			<p>
-									<div class="col-xs-2">
+									<div class="col-xs-3">
 										Payment Terms :
 									</div>
-									<div class="col-xs-10">
+									<div class="col-xs-9">
 										<span t-field="o.payment_term_id.note"/>
 									</div>
 								</p>
 								<br/>
 								<p>
-									<div class="col-xs-2">
+									<div class="col-xs-3">
 		    							Account Number :
 		    						</div>
-		    						<div class="col-xs-10">
+		    						<div class="col-xs-9">
 		    							<span t-field="o.bank_account.bank_acc_number"/>
 		    						</div>
 		    					</p>
 		    					<br/>
 		    					<p>
-            						<div class="col-xs-2">
+            						<div class="col-xs-3">
             							Account Name :
             						</div>
-            						<div class="col-xs-10">
+            						<div class="col-xs-9">
             							<span t-field="o.bank_account.sequence_id.name"/>
             						</div>
             					</p>
             					<br/>
             					<p>
-            						<div class="col-xs-2">
+            						<div class="col-xs-3">
             							Benificiary Bank :
             						</div>
-            						<div class="col-xs-10">
+            						<div class="col-xs-9">
             							<span t-field="o.bank_account.bank_id.name"/>
             						</div>
             					</p>
             					<br/>
             					<p>
-            						<div class="col-xs-2">
+            						<div class="col-xs-3">
             							SWIFT Code :
             						</div>	
-            						<div class="col-xs-10">
+            						<div class="col-xs-9">
             							<span t-field="o.bank_account.bank_id.bic"/>
             						</div>
             					</p>
             					<br/>
             					<p t-if="o.comment">
-            						<div class="col-xs-2">
+            						<div class="col-xs-3">
             							Notes :
             						</div>
-            						<div class="col-xs-2">
+            						<div class="col-xs-9">
             							<span t-field="o.comment"/>
             						</div>	
             					</p>
