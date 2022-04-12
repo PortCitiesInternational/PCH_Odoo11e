@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
 	<template id="custom_invoice_report">
 		<t t-call="web.html_container">
 			<t t-foreach="docs" t-as="o">
@@ -184,48 +185,5 @@
 			</div>
         </t>
     </template>
-	<!-- <template id="external_layout_background">
-		<t t-foreach="docs" t-as="o">
-        <div class="header o_background_header_pch">
-            <div class="pull-right">
-                <h3 class="mt0 text-right" t-field="o.company_id.report_header"/>
-            </div>
-            <div align="middle">
-            	<img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" class="text-center" />
-            </div>
-            <div class="clearfix mb8"/>
-        </div>
-
-        <div class="article o_report_layout_background">
-            <t t-raw="0" />
-        </div>
-
-        <div class="footer o_background_footer">
-            <div class="text-center">
-                <ul class="list-inline">
-                    <li t-if="o.company_id.phone"><i class="fa fa-phone"/> <span t-field="o.company_id.phone"/></li>
-                    <li t-if="o.company_id.email"><i class="fa fa-at"/> <span t-field="o.company_id.email"/></li>
-                    <li t-if="o.company_id.website"><i class="fa fa-globe"/> <span t-field="o.company_id.website"/></li>
-                    <li t-if="o.company_id.vat"><i class="fa fa-building-o"/><t t-esc="o.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="company.vat"/></li>
-                </ul>
-                <div t-field="o.company_id.report_footer"/>
-                <div class="text-center">
-                	<span t-field="o.company_id.name"/>
-                	-
-                	<span t-field="o.company_id.street"/>
-                	<span t-field="o.company_id.street2"/>
-                	<span t-field="o.company_id.city"/>,
-                	<span t-field="o.company_id.country_id.name"/>
-                </div>
-                <div class="text-muted">
-                    Page:
-                    <span class="page"/>
-                    of
-                    <span class="topage"/>
-                </div>
-            </div>
-        </div>
-        </t>
-    </template> -->
 
 </odoo>
