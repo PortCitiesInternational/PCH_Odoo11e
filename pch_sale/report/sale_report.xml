@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<report 
+		id="report_sale_order"
+		string="Quotation / Sale Order"
+		model="sale.order"
+		report_type="qweb-pdf"
+		paperformat="pch_sale.pch_sale_paperformat"
+		file="pch_sale.custom_sale_report"
+		name="pch_sale.custom_sale_report"
+		menu="True"
+		print_report_name="(object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)"
+	/>
+</odoo>
