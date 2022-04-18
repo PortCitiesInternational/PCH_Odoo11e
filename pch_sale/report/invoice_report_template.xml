@@ -103,29 +103,31 @@
 						</div>
 					</div>
 
-					<div class="row" style="margin-top: 10px;">
-						<div class="col-3">Payment Terms :</div>
-						<div class="col-9"><span t-field="o.invoice_payment_term_id.note"/></div>
-					</div>
-					<div class="row">
-						<div class="col-3">Account Number :</div>
-						<div class="col-9"><span t-field="o.bank_account.bank_acc_number"/></div>
-					</div>
-					<div class="row">
-						<div class="col-3">Account Name :</div>
-						<div class="col-9"><span t-field="o.bank_account.secure_sequence_id.name"/></div>
-					</div>
-					<div class="row">
-						<div class="col-3">Benificiary Bank :</div>
-						<div class="col-9"><span t-field="o.bank_account.bank_id.name"/></div>
-					</div>
-					<div class="row">
-						<div class="col-3">SWIFT Code :</div>
-						<div class="col-9"><span t-field="o.bank_account.bank_id.bic"/></div>
-					</div>
-					<div class="row" t-if="o.narration">
-						<div class="col-3" >Notes :</div>
-						<div class="col-9"><span t-field="o.narration"/></div>
+					<div style="page-break-inside: avoid;">
+						<div class="row" style="margin-top: 10px;">
+							<div class="col-3">Payment Terms :</div>
+							<div class="col-9"><span t-field="o.invoice_payment_term_id.note"/></div>
+						</div>
+						<div class="row">
+							<div class="col-3">Account Number :</div>
+							<div class="col-9"><span t-field="o.bank_account.bank_acc_number"/></div>
+						</div>
+						<div class="row">
+							<div class="col-3">Account Name :</div>
+							<div class="col-9"><span t-field="o.bank_account.secure_sequence_id.name"/></div>
+						</div>
+						<div class="row">
+							<div class="col-3">Benificiary Bank :</div>
+							<div class="col-9"><span t-field="o.bank_account.bank_id.name"/></div>
+						</div>
+						<div class="row">
+							<div class="col-3">SWIFT Code :</div>
+							<div class="col-9"><span t-field="o.bank_account.bank_id.bic"/></div>
+						</div>
+						<div class="row" t-if="o.narration">
+							<div class="col-3" >Notes :</div>
+							<div class="col-9"><span t-field="o.narration"/></div>
+						</div>
 					</div>
 				</t>
 			</t>
