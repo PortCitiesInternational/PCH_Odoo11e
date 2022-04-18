@@ -52,7 +52,6 @@
 							<thead>
 								<tr>
 									<th>Description</th>
-									<th class="hidden">Source Document</th>
 									<th class="text-right">Quantity</th>
 									<th class="text-right">Unit Price</th>
 									<th t-if="display_discount" class="text-right">Disc.(%)</th>
@@ -61,8 +60,7 @@
 							</thead>
 							<tbody class="invoice_tbody">
 								<tr t-foreach="o.invoice_line_ids" t-as="l">
-									<td><span t-field="l.name"/></td>
-									<td class="hidden"><span t-field="l.ref"/></td>
+									<td><span t-field="l.name" t-options="{'widget': 'text'}"/></td>
 									<td class="text-right">
 										<span t-field="l.quantity"/>
 										<span t-field="l.product_uom_id"  groups="uom.group_uom"/>
