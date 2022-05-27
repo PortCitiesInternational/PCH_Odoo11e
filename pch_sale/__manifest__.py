@@ -26,6 +26,7 @@
         'report/sale_report.xml',
         'report/sale_report_template.xml',
         'views/account_invoice_view.xml',
+        'views/account_move_view.xml',
         'views/sale_view.xml',
         'views/web.xml',
     ],
