@@ -1,5 +1,4 @@
-# coding: utf-8
-""" pch_sale """
-
-from . import sale
-from . import account_invoice
+# -*- coding: utf-8 -*-
+""" Import python files """
+from . import account_move
+from . import sale_order
