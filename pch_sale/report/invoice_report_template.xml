@@ -115,7 +115,7 @@
 					</div>
 					<div class="row">
 						<div class="col-3">Account Name :</div>
-						<div class="col-9"><span t-field="o.bank_account.secure_sequence_id.name"/></div>
+						<div class="col-9"><span t-field="o.bank_account.bank_account_id.acc_holder_name"/></div>
 					</div>
 					<div class="row">
 						<div class="col-3">Benificiary Bank :</div>
