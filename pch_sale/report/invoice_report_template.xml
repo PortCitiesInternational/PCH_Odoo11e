@@ -61,7 +61,7 @@
 							</thead>
 							<tbody class="invoice_tbody">
 								<tr t-foreach="o.invoice_line_ids" t-as="l">
-									<td><span t-field="l.name"/></td>
+									<td><span t-field="l.name" style="white-space:pre-wrap;"/></td>
 									<td class="hidden"><span t-field="l.ref"/></td>
 									<td class="text-right">
 										<span t-field="l.quantity"/>
